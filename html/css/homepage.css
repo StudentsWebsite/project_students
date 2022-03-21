@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/*Home Button Image*/
+/*#homeimg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+#homeimg:hover {opacity: 0.7;}*/
+
+/*Navigator Bar*/
+.navbar {
+    background-color: rgb(17, 0, 255);
+    overflow: auto;
+}

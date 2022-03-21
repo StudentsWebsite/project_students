@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/*Home Button Image*/
+/*#homeimg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+#homeimg:hover {opacity: 0.7;}*/
+
+/*Navigator Bar*/
+.navbar {
+    background-color: rgb(17, 0, 255);
+    overflow: auto;
+}
+
+.Type {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.type-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.type-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.type-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.type-content a:hover {background-color: #ddd;}
+
+.type-dropdown:hover .type-content {display: block;}
+
+.type-dropdown:hover .Type {background-color: #3e8e41;}
