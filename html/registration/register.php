@@ -1,9 +1,34 @@
 <?php include('server.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<title>Register Students</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../css/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+<!--===============================================================================================-->
 <meta charset="utf-8">
-    <title>Register</title>
+    <title>Students-Project</title>
     <style>
       /* Modifying the background color */
        
@@ -17,85 +42,95 @@
           color: rgb(2, 12, 2);
       }
   </style>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-	        <!--NAVIGATOR BAR-->
+	   
+<form method="post" action="register.php">
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+					<span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+					<?php include('errors.php'); ?>
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="username" value="<?php echo $username; ?>">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
+                    
 
-			<nav class = "navbar navbar-custom">
-        <!--LOGO AND TITLE SECTION-->
-        <img id = "logoimg" src="img/logoimg.png" style="width: 100%;max-width:60px">
-        <strong style="font-size:40px;font-family: 'Times New Roman', Times, serif;" >Student Records</strong>
-        <!--END OF LOGO AND TITLE SECTION-->
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="email" name="email" value="<?php echo $email; ?>">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
 
-        <!--HOME PAGE HYPERLINK-->
-        <a href="https://localhost/project_students/html/home.html">
-            <img id="homeimg" src="img/homeimg.png" align="right" alt="Home Page" style="width:100%;max-width:40px">
-         </a>
-        <!--END OF HOME PAGE HYPERLINK-->  
+                    <div class="wrap-input100 validate-input" >
+						<input class="input100" type="password" name="password_1">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
 
-        <!--INFORMATION HYPERLINK-->     
-        <a href="https://localhost/project_students/html/information.html">
-           <img id = "infoimg" src="img/infoimg.png" align="right" alt="Info Page" style="width:100%;max-width:40px">
-         </a>  
-        <!--END OF INFORMATION HYPERLINK-->
+                    <div class="wrap-input100 validate-input" >
+						<input class="input100" type="password" name="password_2">
+						<span class="focus-input100" data-placeholder="Confirm Password"></span>
+					</div>
 
-        <!--CONTACT HYPERLINK-->
-        <a href="https://localhost/project_students/html/contact.html">
-           <img id="contactimg" src="img/contactimg.png" align="right" alt="Contact Page" style="width:100%;max-width:40px">
-        </a>
-        <!--END OF CONTACT HYPERLINK-->
-
-
-  </nav> 
-     <!--THE END OF NAVIGATOR BAR-->
-     <br>
-  <div class="header">
-  	<h2>Register</h2>
-  </div>
-	
-  <form method="post" action="register.php">
-  	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
-  	</div>
-  	<div class="input-group">
-  	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
-  	</div>
-
-  	<div class="input-group">
-  	  <label>Password</label>
-  	  <input type="password" name="password_1">
-  	</div>
-  	<div class="input-group">
-  	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
-  	</div>
-	  <!--<div class="input-group">
-  	  <label>Type</label>
-  	  <input type="text" name="type">
-  	</div>-->
-
-  <div class="type-dropdown">
-    <label for="type" class="Type">Type</label>
-    <div class="type-content">
-    <select data-tax="Type" data-id="type" id="<?php echo $type; ?>" name="type" style="width: 40%; height: 100%;">
+                    <div class="wrap-input100 validate-input" >
+						<input class="input100" type="password" name="type">
+                        <select data-tax="Type" data-id="type" id="<?php echo $type; ?>" name="type" style="width: 40%; height: 100%;">
         <option value="">choose...</option>
         <option value="Student">Student</option>
         <option value="Lecturer">Lecturer</option>
         <option value="Admin">Admin</option>
     </select>
-    </div>
-  </div>
+						<span class="focus-input100" data-placeholder="Type"></span>
+					</div>
 
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
-  	</div>
-  	<p>
-  		Already a member? <a href="login.php">Sign in</a>
-  	</p>
-  </form>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" name = "reg_user">
+								Register
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Already a member?
+						</span>
+						</form>
+
+						<a href="login.php">Sign in</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>

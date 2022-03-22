@@ -1,7 +1,32 @@
 <?php include('server.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<title>Login Students</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../css/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+<!--===============================================================================================-->
 <meta charset="utf-8">
     <title>Students-Project</title>
     <style>
@@ -17,71 +42,73 @@
           color: rgb(2, 12, 2);
       }
   </style>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
+	   
+<form method="post" action="login.php">
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+					<span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+					<?php include('errors.php'); ?>
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
 
-        <!--NAVIGATOR BAR-->
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
 
-  <nav class = "navbar navbar-custom">
-        <!--LOGO AND TITLE SECTION-->
-        <img id = "logoimg" src="img/logoimg.png" style="width: 100%;max-width:60px">
-        <strong style="font-size:40px;font-family: 'Times New Roman', Times, serif;" >Student Records</strong>
-        <!--END OF LOGO AND TITLE SECTION-->
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" name = "login_user">
+								Login
+							</button>
+						</div>
+					</div>
 
-        <!--HOME PAGE HYPERLINK-->
-        <a href="https://localhost/project_students/html/home.html">
-            <img id="homeimg" src="img/homeimg.png" align="right" alt="Home Page" style="width:100%;max-width:40px">
-         </a>
-        <!--END OF HOME PAGE HYPERLINK-->  
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Don’t have an account?
+						</span>
+						</form>
 
-        <!--INFORMATION HYPERLINK-->     
-        <a href="https://localhost/project_students/html/information.html">
-           <img id = "infoimg" src="img/infoimg.png" align="right" alt="Info Page" style="width:100%;max-width:40px">
-         </a>  
-        <!--END OF INFORMATION HYPERLINK-->
+						<a href="register.php">Sign up</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
-        <!--CONTACT HYPERLINK-->
-        <a href="https://localhost/project_students/html/contact.html">
-           <img id="contactimg" src="img/contactimg.png" align="right" alt="Contact Page" style="width:100%;max-width:40px">
-        </a>
-        <!--END OF CONTACT HYPERLINK-->
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
-
-  </nav> 
-     <!--THE END OF NAVIGATOR BAR-->
-     <br>
-  <div class="header">
-  	<h2>Login</h2>
-  </div>
-	 
-  <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  		<label>Username</label>
-  		<input type="text" name="username" >
-  	</div>
-  	<div class="input-group">
-  		<label>Password</label>
-  		<input type="password" name="password">
-  	</div>
-    <!-- <div class="type-dropdown">
-    <label for="type" class="Type">Type</label>
-    <div class="type-content">
-    <select data-tax="Type" data-id="type" id="<?php //echo $type; ?>" name="type" style="width: 40%; height: 100%;">
-        <option value="">choose...</option>
-        <option value="Student">Student</option>
-        <option value="Lecturer">Lecturer</option>
-        <option value="Admin">Admin</option>
-    </select>
-    </div>
-  </div>-->
-  	<div class="input-group">
-  		<button type="submit" class="btn" name="login_user">Login</button>
-  	</div>
-  	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
-  	</p>
-  </form>
 </body>
 </html>

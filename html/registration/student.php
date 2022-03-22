@@ -5,7 +5,7 @@
 </head>
 
 <body>
-user
+student
 </body>
 
 </html>
