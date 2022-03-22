@@ -104,6 +104,7 @@ if (isset($_POST['login_user'])) {
         header('location: lecturer.php');
         exit;
         }
+        
   /*if (count($errors) == 0) {
       $password = md5($password);
       $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND type='$type'";
