@@ -71,7 +71,7 @@ if (isset($_POST['login_user'])) {
   if (empty($password)) {
       array_push($errors, "Password is required");
   }
-
+  $_SESSION['user_id'] = $id;
   if (count($errors) == 0) {
       $password = md5($password);
 
@@ -99,9 +99,11 @@ if (isset($_POST['login_user'])) {
       $results2 = mysqli_query($db, $query2);
 
         if (mysqli_num_rows($results2) == 1) {
+          $id = $row["id"];
         $_SESSION['username'] = $username;
+        $_SESSION['user_ID']= $result2['id'];
         $_SESSION['success'] = "You are now logged in";
-        header('location: lecturer.php');
+        header('location: lecturerpage/pages/dashboard.php');
         exit;
         }
         
