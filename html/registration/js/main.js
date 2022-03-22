@@ -2,7 +2,7 @@
 (function ($) {
     "use strict";
 
-
+    //Works to refresh the page if goes next or previous to clear the fields an do not stack the animation
     $(window).bind("pageshow", function() {
         var form = $('form'); 
         // let the browser natively reset defaults
