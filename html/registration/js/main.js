@@ -3,8 +3,15 @@
     "use strict";
 
 
+    $(window).bind("pageshow", function() {
+        var form = $('form'); 
+        // let the browser natively reset defaults
+        form[0].reset();
+    });
+
     /*==================================================================
     [ Focus input ]*/
+    
     $('.input100').each(function(){
         $(this).on('blur', function(){
             if($(this).val().trim() != "") {
