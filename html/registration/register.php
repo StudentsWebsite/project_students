@@ -80,14 +80,14 @@
 					</div>
 
                     <div class="wrap-input100 validate-input" >
-						<input class="input100" type="password" name="type">
+				<label style="color: #999999">  Type </label><p></p>
                         <select data-tax="Type" data-id="type" id="<?php echo $type; ?>" name="type" style="width: 40%; height: 100%;">
         <option value="">choose...</option>
         <option value="Student">Student</option>
         <option value="Lecturer">Lecturer</option>
         <option value="Admin">Admin</option>
     </select>
-						<span class="focus-input100" data-placeholder="Type"></span>
+				
 					</div>
 
 					<div class="container-login100-form-btn">
