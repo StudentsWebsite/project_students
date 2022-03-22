@@ -45,7 +45,7 @@ if (isset($_POST['reg_user'])) {
     }
   }
 
-  if(($type != "Admin") && ($type != "User") && ($type != "Lecturer")){
+  if(($type != "Admin") && ($type != "Student") && ($type != "Lecturer")){
     array_push($errors, "Wrong type!");
   }
 
@@ -58,13 +58,12 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: login.php');
   }
 }
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
-  $type = mysqli_real_escape_string($db, $_POST['type']);
 
   if (empty($username)) {
       array_push($errors, "Username is required");
@@ -75,16 +74,44 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
       $password = md5($password);
-      $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND type='$type'";
+
+      $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND type='Student'";
       $results = mysqli_query($db, $query);
-      /*if (mysqli_num_rows($results) == 1) {
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in";
-        header('location: index.php');*/
-        if (mysqli_num_rows($results) == 1 && ($type == 'User')) {
+
+        if (mysqli_num_rows($results) == 1) {
           $_SESSION['username'] = $username;
           $_SESSION['success'] = "You are now logged in";
-          header('location: user.php');
+          header('location: student.php');
+          exit;
+      }
+
+      $query1 = "SELECT * FROM users WHERE username='$username' AND password='$password' AND type='Admin'";
+      $results1 = mysqli_query($db, $query1);
+
+        if(mysqli_num_rows($results1) == 1) {
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: admin.php');
+        exit;
+        }
+
+      $query2 = "SELECT * FROM users WHERE username='$username' AND password='$password' AND type='Lecturer'";
+      $results2 = mysqli_query($db, $query2);
+
+        if (mysqli_num_rows($results2) == 1) {
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: lecturer.php');
+        exit;
+        }
+  /*if (count($errors) == 0) {
+      $password = md5($password);
+      $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND type='$type'";
+      $results = mysqli_query($db, $query);
+        if (mysqli_num_rows($results) == 1 && ($type == 'Student')) {
+          $_SESSION['username'] = $username;
+          $_SESSION['success'] = "You are now logged in";
+          header('location: student.php');
       }
       else if(mysqli_num_rows($results) == 1 && ($type == 'Admin')) {
         $_SESSION['username'] = $username;
@@ -95,7 +122,7 @@ if (isset($_POST['login_user'])) {
       $_SESSION['username'] = $username;
       $_SESSION['success'] = "You are now logged in";
       header('location: lecturer.php');
-  }
+  }*/
       else {
           array_push($errors, "Wrong username/password combination or Type");
       }

@@ -65,17 +65,17 @@
   		<label>Password</label>
   		<input type="password" name="password">
   	</div>
-    <div class="type-dropdown">
+    <!-- <div class="type-dropdown">
     <label for="type" class="Type">Type</label>
     <div class="type-content">
-    <select data-tax="Type" data-id="type" id="<?php echo $type; ?>" name="type" style="width: 40%; height: 100%;">
+    <select data-tax="Type" data-id="type" id="<?php //echo $type; ?>" name="type" style="width: 40%; height: 100%;">
         <option value="">choose...</option>
-        <option value="User">User</option>
+        <option value="Student">Student</option>
         <option value="Lecturer">Lecturer</option>
         <option value="Admin">Admin</option>
     </select>
     </div>
-  </div>
+  </div>-->
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
