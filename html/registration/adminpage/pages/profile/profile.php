@@ -31,6 +31,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'project_students');
     <div class="wrapper">
         <!-- Sidebar  -->
          <?php
+         include ("../../../server.php");
        $id=$_SESSION['user_ID'];
 
           $query = "SELECT * FROM users WHERE id = '$id'";
@@ -42,25 +43,15 @@ $conn = mysqli_connect('localhost', 'root', '', 'project_students');
              $name=$row['username'];
              $email=$row['email'];
              $type=$row['type'];
-   if($row['picture']!=NULL){
-                                $picture=$row['picture'];
-                            }else
-                            {
-                                $picture='dummy.png';
-                            }
        ?>
     
         <!-- Page Content  -->
        
      
 <div id="deemo">
- <center>
- <button v-on:click="fadeeMe">
-    Image
-  </button>
-</center>
+    <p></p>
   <transition name="fade" v-on:enter="enter">
-    <p v-if="show"><img  style="margin-left:30.8em" height="160" width="160" class=" img-profile rounded-circle "
+    <p v-if="show"><img  src="dummy.png" style="margin-left:30.8em" height="160" width="160" class=" img-profile rounded-circle "
                                     src="pictures/<?php echo $picture; ?>"></p>
   </transition>
 </div>
