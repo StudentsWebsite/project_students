@@ -144,7 +144,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/profile/profile.php">
+          <a class="nav-link  " href="../pages/profile.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -302,9 +302,9 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Welcome...!</p>
+                    <p class="mb-1 pt-2 text-bold">Welcome</p>
                     <h5 class="font-weight-bolder">Admin's Dashboard</h5>
-                    <p class="mb-5">Here you will find whatever you need for your administration...!</p>
+                    <p class="mb-5">Here you will find whatever you need</p>
                     <p>
                     Enjoy!
                     </p>
@@ -328,9 +328,9 @@
             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/lecturers/lecturer1.jpg');">
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3" style="background-color: rgba(0, 0, 0, 0.4)">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Manage Lecturers</h5>
-                <p class="text-white">Dont forget to see the lecturers list. From there you can manage the lecturer list.</p>
+                <p class="text-white">Here you can manage the lecturer list</p>
                 <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="managelecturers.php">
-                  Watch the list
+                   View list
                   <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                 </a>
               </div>
@@ -343,9 +343,9 @@
             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100"  style="background-image: url('../assets/img/students/students1.jpg'); ">
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3" style="background-color: rgba(0, 0, 0, 0.6)">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Manage Students</h5>
-                <p class="text-white">Dont forget to see the student list. From there you can manage the student list.</p>
+                <p class="text-white">Here you can manage the student list</p>
                 <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="managestudents.php">
-                  Watch the list
+                  View list
                   <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                 </a>
               </div>
