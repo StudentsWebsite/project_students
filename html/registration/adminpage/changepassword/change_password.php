@@ -85,5 +85,21 @@ return output;
             </table>
         </div>
     </form>
+  <p> </p>
+    <p> </p>
+  <a class="btn123" href="http://localhost/project_students/html/registration/adminpage/pages/administrator.php">Go back to the HomePage.</a>
+  
+<style>
+   .btn123 {
+  background-color: #555555; /* Black */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
 </body>
 </html>
