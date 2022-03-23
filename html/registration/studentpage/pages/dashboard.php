@@ -105,7 +105,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/contactus.php">
+          <a class="nav-link  " href="../pages/contact.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -198,12 +198,12 @@
         <!-- Manage Lecturers Box -->
         <div class="col-lg-5">
           <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/lecturers/lecturer1.jpg');">
+            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/dashboard/lectures.jpg');">
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3" style="background-color: rgba(0, 0, 0, 0.4)">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Manage Lectures</h5>
-                <p class="text-white">Here you can manage the lecturer list</p>
+                <p class="text-white"> Here you can manage the lecturer list.</p>
                 <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="lectures.php">
-                  View list
+                 View list
                   <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                 </a>
               </div>
