@@ -157,23 +157,24 @@
                     </tr>
                   </thead>
                   <tbody>
-                   <?php 
-                   $query1 = mysqli_query($db,"SELECT * FROM users WHERE users.type = 'Student' ");
-                   while($row = mysqli_fetch_array($query1))
-                   {
-                     ?>
-                     <tr>
-                       <td> <?php echo("&nbsp&nbsp&nbsp&nbsp"); echo($row['id']);?></td>
-                       <td> <?php echo("&nbsp&nbsp&nbsp&nbsp"); echo($row['username']);?></td>
-                       <td> <?php echo("&nbsp&nbsp&nbsp&nbsp"); echo($row['email']);?></td>
-                       <td class="contact-delete">
-                        <form action='delete.php?name="<?php echo $contact['id']; ?>"' method="post">
-                          <input type="hidden" name="name" value="<?php echo $contact['id']; ?>">
-                          <button type="button" class="btn btn-outline-primary btn-sm mb-0">Delete</button>
-                        </form>
-                      </td>
-                      </tr>
-                   <?php } ?>
+                  <?php
+                                            // connect to the database
+                                            $db = mysqli_connect('localhost', 'root', '', 'project_students');
+                                            $lecturers = "SELECT * FROM users WHERE type LIKE 'Student' ";
+                                            $results = mysqli_query($db, $lecturers);
+                                            while($row = mysqli_fetch_assoc($results))
+                                            {
+                                            echo "
+                                            <tr>
+                                                <td>".$row['id']."</td>
+                                                <td>".$row['username']."</td>
+                                                <td>".$row['email']."</td>
+                                                <td><a href='delete.php?id=".$row['id']."' class='btn btn-link text-secondary mb-0'> REMOVE </a></td>
+                                            </tr>
+                                            ";
+                                            
+                                            }
+                                        ?>
                   </tbody>
                 </table>
               </div>
