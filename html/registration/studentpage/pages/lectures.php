@@ -166,52 +166,59 @@
       </div>
     </nav>
     <!-- End Navbar -->
+    <!--The table with lecturers-->
     <div class="container-fluid py-4">
-      <div class="row">
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Welcome</p>
-                    <h5 class="font-weight-bolder">Student Dashboard</h5>
-                    <p class="mb-5">Here you will find whatever you need</p>
-                    <p>
-                    Enjoy!
-                    </p>
-                  </div>
-                </div>
-                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div style="background-color: rgba(0, 0, 0, 0.1)">
-                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <!--<img class="w-100 position-relative z-index-2 pt-4" src="../assets/img/logotipa/logo1.png">-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>Lectures Table</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Lectures
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Lecturers/Students
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Type
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            // connect to the database
+                                            $db = mysqli_connect('localhost', 'root', '', 'project_students');
+                                            $lecturers = "SELECT * FROM lectures";
+                                            $results = mysqli_query($db, $lecturers);
+                                            while($row = mysqli_fetch_assoc($results))
+                                            {
+                                            echo "
+                                            <tr>
+                                                <td>".$row['lecture']."</td>
+                                                <td>".$row['UserName']."</td>
+                                                <td>".$row['Type']."</td>
+                                            </tr>
+                                            ";
+                                            
+                                            }
+                                        ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <p></p>
-        <!-- Manage Lecturers Box -->
-        <div class="col-lg-5">
-          <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/lecturers/lecturer1.jpg');">
-              <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3" style="background-color: rgba(0, 0, 0, 0.4)">
-                <h5 class="text-white font-weight-bolder mb-4 pt-2">Manage Lectures</h5>
-                <p class="text-white">Here you can manage the lecturer list</p>
-                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="lectures.php">
-                  View list
-                  <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -244,7 +251,6 @@
             <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
             <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
           </div>
-        </a>
         <!-- Sidenav Type -->
         <div class="d-flex">
           <button class="btn-sm w-100 mb-0" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
