@@ -185,6 +185,61 @@
       <a class="btn btn-white btn-sm w-100 mb-0" href="contactus.php">Contact Queries</a>
     </div>
   </aside>
+  
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>ContactUs Forms</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Name
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Username
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Message
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            // connect to the database
+                                            $db = mysqli_connect('localhost', 'root', '', 'project_students');
+                                            $lecturers = "SELECT * FROM contactus";
+                                            $results = mysqli_query($db, $lecturers);
+                                            while($row = mysqli_fetch_assoc($results)){
+                                            echo "
+                                            <tr>
+                                                <td>".$row['name']."</td>
+                                                <td>".$row ['email']."</td>
+                                                <td>".$row['message']."</td>
+                                            </tr>
+                                            ";
+                                            
+                                            }
+                                        ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  </div>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
@@ -217,6 +272,7 @@
         </div>
       </div>
     </nav>
+    
     <!-- End Navbar -->
   </main>
   <div class="fixed-plugin">

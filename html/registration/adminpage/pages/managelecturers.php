@@ -317,7 +317,7 @@
                     </div>
                 </div>
             </div>
-    <a class="addbtn" href="functionalities/addform.php">ADD</a>
+    <a class="addbtn" href="http://localhost/project_students/html/registration/register.php">ADD</a>
             <style>
             .addbtn {
                 background-color: #4CAF50; /* Green */

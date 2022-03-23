@@ -20,7 +20,7 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="name">Name</label>
               <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                <input id="<?php echo $name;?>" name="name" type="text" placeholder="Your name" class="form-control">
               </div>
             </div>
     
@@ -28,7 +28,7 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="email">Your E-mail</label>
               <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                <input id="<?php echo $email;?>" name="email" type="text" placeholder="Your email" class="form-control">
               </div>
             </div>
     
@@ -36,7 +36,7 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="message">Your message</label>
               <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                <textarea class=<?php echo $message;?> id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
               </div>
             </div>
     
@@ -54,20 +54,9 @@
                                         <?php
                                             // connect to the database
                                             $db = mysqli_connect('localhost', 'root', '', 'project_students');
-                                            $lecturers = "SELECT * FROM lectures WHERE Type LIKE 'Lecturer' ";
+                                            $lecturers = "INSERT INTO contactus WHERE name = '$name' AND email='$email' AND message = '$message'  ";
                                             $results = mysqli_query($db, $lecturers);
-                                            while($row = mysqli_fetch_assoc($results)){
-                                            echo "
-                                            <tr>
-                                                <td>".$row['lecture']."</td>
-                                                <td>".$row ['UserName']."</td>
-                                                <td>".$row['Type']."</td>
-                                            </tr>
-                                            ";
-
-                                            }
                                         ?>
-                                        </tr>
                                     </tbody>
 	</div>
 </div>
