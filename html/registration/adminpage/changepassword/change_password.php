@@ -19,13 +19,19 @@ if (count($_POST) > 0) {
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <script>
 function validatePassword() {
-var currentPassword,newPassword,confirmPassword,output = true;
+var Username,currentPassword,newPassword,confirmPassword,output = true;
 
+Username = document.frmChange.Username;
 currentPassword = document.frmChange.currentPassword;
 newPassword = document.frmChange.newPassword;
 confirmPassword = document.frmChange.confirmPassword;
 
-if(!currentPassword.value) {
+if(!Username.value) {
+	Username.focus();
+	document.getElementById("Username").innerHTML = "required";
+	output = false;
+}
+else if(!currentPassword.value) {
 	currentPassword.focus();
 	document.getElementById("currentPassword").innerHTML = "required";
 	output = false;
@@ -60,6 +66,12 @@ return output;
                 width="500" align="center" class="tblSaveForm">
                 <tr class="tableheader">
                     <td colspan="2">Change Password</td>
+                </tr>
+                <tr>
+                    <td width="40%"><label>Username</label></td>
+                    <td width="60%"><input type="password"
+                        name="Username" class="txtField" /><span
+                        id="Username" class="required"></span></td>
                 </tr>
                 <tr>
                     <td width="40%"><label>Current Password</label></td>
