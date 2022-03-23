@@ -194,6 +194,59 @@
       </div>
     </nav>
     <!-- End Navbar -->
+    <!--The table with lecturers-->
+    <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>Lectures Table</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Lectures
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Lecturers/Students
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Type
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            // connect to the database
+                                            $db = mysqli_connect('localhost', 'root', '', 'project_students');
+                                            $lecturers = "SELECT * FROM lectures";
+                                            $results = mysqli_query($db, $lecturers);
+                                            while($row = mysqli_fetch_assoc($results))
+                                            {
+                                            echo "
+                                            <tr>
+                                                <td>".$row['lecture']."</td>
+                                                <td>".$row['UserName']."</td>
+                                                <td>".$row['Type']."</td>
+                                            </tr>
+                                            ";
+                                            
+                                            }
+                                        ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
