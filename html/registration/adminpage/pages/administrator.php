@@ -302,7 +302,7 @@
             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/lecturers/lecturer1.jpg');">
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3" style="background-color: rgba(0, 0, 0, 0.4)">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Manage Lecturers</h5>
-                <p class="text-white">Dont forget to watch out the lecturers list. From there you can manage the lecturer list.</p>
+                <p class="text-white">Dont forget to see the lecturers list. From there you can manage the lecturer list.</p>
                 <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="managelecturers.php">
                   Watch the list
                   <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
@@ -317,7 +317,7 @@
             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100"  style="background-image: url('../assets/img/students/students1.jpg'); ">
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3" style="background-color: rgba(0, 0, 0, 0.6)">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Manage Students</h5>
-                <p class="text-white">Dont forget to watch out the student list. From there you can manage the student list.</p>
+                <p class="text-white">Dont forget to see the student list. From there you can manage the student list.</p>
                 <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="managestudents.php">
                   Watch the list
                   <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>

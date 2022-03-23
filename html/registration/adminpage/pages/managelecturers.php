@@ -271,10 +271,6 @@
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Email
                                             </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Lecture
-                                            </th>
                                             <th>
                                                 <button class="btn btn-link text-secondary mb-0"> Manage Lecturers </button>
                                             </th>
