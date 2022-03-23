@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include('serversideform.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,6 @@
 					<span class="login100-form-title p-b-48">
 						<i class="zmdi zmdi-font"></i>
 					</span>
-					<?php include('errors.php'); ?>
 					<div class="wrap-input100 validate-input" >
 						<input class="input100" type="text" name="username" value="<?php echo $username; ?>">
 						<span class="focus-input100" data-placeholder="Username"></span>
@@ -83,36 +82,31 @@
                     <div class="wrap-input100 validate-input" >
 				<label style="color: #999999">  Type </label><p></p>
                         <select data-tax="Type" data-id="type" id="<?php echo $type; ?>" name="type" style="width: 40%; height: 100%;">
-        <option value="">choose...</option>
-        <option value="Student">Student</option>
-        <option value="Lecturer">Lecturer</option>
-        <option value="Admin">Admin</option>
-    </select>
+                        <option value="Lecturer">Lecturer</option>
+                        </select>
 				
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" name = "reg_user">
-								Register
-							</button>
+							<a class="login100-form-btn" name = "reg_user"
+                            href="success.php">
+								Register a new Lecturer
+                            </a>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <a class="login100-form-btn" href="http://localhost/project_students/html/registration/adminpage/pages/managelecturers.php">Return back to the page.</a>
 						</div>
-					</div>
-
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Already a member?
-						</span>
-						</form>
-
-						<a href="login.php">Sign in</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
 
 	<div id="dropDownSelect1"></div>
 	
